@@ -81,12 +81,32 @@
     </distributionManagement>
 
     <modules>
-        <module>bom</module>
-        <module>core</module>
-        <module>plugins</module>
+<!--        <module>bom</module>-->
+<!--        <module>core</module>-->
+<!--        <module>plugins</module>-->
         <module>bundles</module>
         <module>apps</module>
     </modules>
+
+
+    <dependencies>
+        <!-- Annotations from the Checker Framework: nullness, interning, locking, ... -->
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
+            <version>3.35.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.errorprone</groupId>
+            <artifactId>javac</artifactId>
+            <version>9+181-r4173-1</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.ucr.cs.riple.taint</groupId>
+            <artifactId>ucrtainting-checker</artifactId>
+            <version>0.1</version>
+        </dependency>
+    </dependencies>
 
     <licenses>
         <license>
@@ -164,8 +184,8 @@
                                 <annotationProcessor>edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker</annotationProcessor>
                             </annotationProcessors>
                             <compilerArgs>
-                                <arg>-AannotatedPackages=org.owasp</arg>
-                                <arg>-AenableLibraryCheck=false</arg>
+                                <arg>-AannotatedPackages=org.apache</arg>
+                                <arg>-AenableLibraryCheck=true</arg>
                                 <arg>-AenableSanitizationCheck=false</arg>
                                 <arg>-AenableValidationCheck=false</arg>
                                 <!-- <arg>-Awarns</arg> --> <!-- -Awarns turns type-checking errors into warnings. -->
@@ -1311,23 +1331,5 @@
         </dependencies>
     </dependencyManagement>
 
-    <dependencies>
-        <!-- Annotations from the Checker Framework: nullness, interning, locking, ... -->
-        <dependency>
-            <groupId>org.checkerframework</groupId>
-            <artifactId>checker-qual</artifactId>
-            <version>3.35.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.errorprone</groupId>
-            <artifactId>javac</artifactId>
-            <version>9+181-r4173-1</version>
-        </dependency>
-        <dependency>
-            <groupId>edu.ucr.cs.riple.taint</groupId>
-            <artifactId>ucrtainting-checker</artifactId>
-            <version>0.1</version>
-        </dependency>
-    </dependencies>
 
 </project>
