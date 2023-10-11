@@ -174,18 +174,17 @@
                             </compilerArguments>
                             <annotationProcessorPaths>
                                 <path>
-                                    <groupId>edu.ucr.cs.riple.taint</groupId>
-                                    <artifactId>ucrtainting-checker</artifactId>
-                                    <version>0.1</version>
+                                    <groupId>org.checkerframework</groupId>
+                                    <artifactId>checker</artifactId>
+                                    <version>3.35.0</version>
                                 </path>
                             </annotationProcessorPaths>
                             <annotationProcessors>
                                 <!-- Add all the checkers you want to enable here -->
-                                <annotationProcessor>edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker</annotationProcessor>
+                                <annotationProcessor>org.checkerframework.checker.tainting.TaintingChecker</annotationProcessor>
                             </annotationProcessors>
                             <compilerArgs>
-                                <arg>-AannotatedPackages=org.apache</arg>
-                                <arg>-AenableLibraryCheck</arg>
+<!--                                <arg>-Astubs="/Users/kknock/RIPLE/taint/summer/stubs/"</arg>-->
 <!--                                <arg>-AenableSanitizationCheck</arg>-->
 <!--                                <arg>-AenableValidationCheck</arg>-->
                                 <!-- <arg>-Awarns</arg> --> <!-- -Awarns turns type-checking errors into warnings. -->
