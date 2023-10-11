@@ -82,10 +82,10 @@
 
     <modules>
 <!--        <module>bom</module>-->
-<!--        <module>core</module>-->
+        <module>core</module>
 <!--        <module>plugins</module>-->
-        <module>bundles</module>
-        <module>apps</module>
+<!--        <module>bundles</module>-->
+<!--        <module>apps</module>-->
     </modules>
 
 
@@ -185,9 +185,9 @@
                             </annotationProcessors>
                             <compilerArgs>
                                 <arg>-AannotatedPackages=org.apache</arg>
-                                <arg>-AenableLibraryCheck=true</arg>
-                                <arg>-AenableSanitizationCheck=false</arg>
-                                <arg>-AenableValidationCheck=false</arg>
+                                <arg>-AenableLibraryCheck</arg>
+<!--                                <arg>-AenableSanitizationCheck</arg>-->
+<!--                                <arg>-AenableValidationCheck</arg>-->
                                 <!-- <arg>-Awarns</arg> --> <!-- -Awarns turns type-checking errors into warnings. -->
                             </compilerArgs>
                         </configuration>
